@@ -13,8 +13,8 @@ let amigoId=0;
  */
 const agregarAmigo = () => {
     amigoId++;
-    const amigo = document.getElementById('amigo').value;
-    if(amigo === ''){
+    const amigo = document.getElementById('amigo').value.trim();
+    if(!amigo){
         alert('Por favor ingrese un amigo');
          return;
     }
@@ -40,12 +40,12 @@ const agregarAmigo = () => {
  * Si hay menos de dos amigos en la lista, muestra una alerta solicitando agregar más amigos.
  * Selecciona aleatoriamente un amigo de la lista y muestra el resultado.
  */
-const sortearAmigo = () => {
-    const amigos = document.querySelectorAll('#listaAmigos li');
+const sortearAmigo = () => {    
     if(amigoId<2){
         alert('Por favor agregue al menos dos amigos');
         return;        
     }
+    const amigos = document.querySelectorAll('#listaAmigos li');
     const key =Math.floor(Math.random() * amigos.length);
     const amigoSecreto = amigos[key];
     const resultado = document.getElementById('resultado');
