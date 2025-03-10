@@ -22,13 +22,12 @@ class App {
         this.regex = /^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\s]+$/;
     }
   
-/**
- * Initializes the application by setting up event listeners for button actions.
- * Binds the "click" event on the "agregarButton" to the "agregarAmigo" method
- * and the "click" event on the "buttonSortear" to the "sortearAmigos" method.
- */
-
-    init() {
+  /**
+  Inicializa la aplicación configurando los event listeners para las acciones de los botones.
+  Asigna el evento "click" en el "agregarButton" al método "agregarAmigo"
+  y el evento "click" en el "buttonSortear" al método "sortearAmigos".
+  */
+  init() {
         this.agregarButton.addEventListener("click", this.agregarAmigo.bind(this));
         this.buttonSortear.addEventListener("click", this.sortearAmigos.bind(this));
     }
